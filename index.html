@@ -8,14 +8,45 @@
   <meta property="og:description" content="소중한 날 함께해 주세요">
   <meta property="og:image" content="https://mcard-resources.barunsoncard.com/upload/invitation/260408/1176773/gallery/0e71015a-b03b-4186-b928-a3f089d03e85.jpg">
 
-  <!-- 자동 이동 -->
-  <meta http-equiv="refresh" content="2; url=https://mcard.barunsoncard.com/m/vtkepy554917">
-
   <title>소중한 날 함께해 주세요</title>
+
+  <style>
+    body {
+      margin: 0;
+      overflow: hidden;
+      background: #000;
+    }
+
+    #cover {
+      position: fixed;
+      width: 100%;
+      height: 100%;
+      background: url('https://mcard-resources.barunsoncard.com/upload/invitation/260408/1176773/gallery/0e71015a-b03b-4186-b928-a3f089d03e85.jpg') center/cover no-repeat;
+      opacity: 1;
+      transition: opacity 1s ease;
+    }
+
+    .fade-out {
+      opacity: 0;
+    }
+  </style>
 </head>
 
-<body style="text-align:center; margin-top:100px;">
-  <h2>초대장을 불러오는 중입니다...</h2>
-  <p>잠시만 기다려 주세요</p>
+<body>
+
+<div id="cover"></div>
+
+<script>
+  // 1. 1.5초 후 페이드 시작
+  setTimeout(() => {
+    document.getElementById('cover').classList.add('fade-out');
+  }, 1500);
+
+  // 2. 2.5초 후 페이지 이동
+  setTimeout(() => {
+    window.location.href = "https://mcard.barunsoncard.com/m/vtkepy554917";
+  }, 2500);
+</script>
+
 </body>
 </html>
