@@ -37,15 +37,20 @@
 <div id="cover"></div>
 
 <script>
-  // 1. 1.5초 후 페이드 시작
-  setTimeout(() => {
-    document.getElementById('cover').classList.add('fade-out');
-  }, 1500);
+  const cover = document.getElementById('cover');
 
-  // 2. 2.5초 후 페이지 이동
+  setTimeout(() => {
+    cover.classList.add('fade-in');
+  }, 200);
+
+  setTimeout(() => {
+    cover.classList.remove('fade-in');
+    cover.classList.add('fade-out');
+  }, 1600);
+
   setTimeout(() => {
     window.location.href = "https://mcard.barunsoncard.com/m/vtkepy554917";
-  }, 2500);
+  }, 2300);
 </script>
 
 </body>
