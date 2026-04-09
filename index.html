@@ -1,57 +1,83 @@
 <!DOCTYPE html>
-<html>
+<html lang="ko">
 <head>
   <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-  <!-- 카톡 미리보기 -->
+  <!-- 카카오톡 미리보기 -->
+  <meta property="og:type" content="website">
   <meta property="og:title" content="강신엽, 김태린 결혼합니다♥">
-  <meta property="og:description" content="2026.06.06 (토) 17:30\n더 아리엘 6층 스카이가든홀">
-  <meta property="og:image" content="https://mcard-resources.barunsoncard.com/upload/invitation/260408/1176773/gallery/0e71015a-b03b-4186-b928-a3f089d03e85.jpg">
+  <meta property="og:description" content="2026.06.06 (토) 17:30 · 더 아리엘 6층 스카이가든홀">
 
-  <title>2026.06.06 (토) 17:30\n더 아리엘 6층 스카이가든홀</title>
+  <!-- 🔥 썸네일 전용 이미지 (카톡용) -->
+  <meta property="og:image" content="https://mcard-resources.barunsoncard.com/upload/invitation/260408/1176773/gallery/0e71015a-b03b-4186-b928-a3f089d03e85.jpg">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="1200">
+
+  <meta property="og:url" content="https://youbniret.wedding/">
+
+  <title>강신엽, 김태린 결혼합니다♥</title>
 
   <style>
-    body {
+    html, body {
       margin: 0;
+      width: 100%;
+      height: 100%;
       overflow: hidden;
       background: #000;
     }
 
     #cover {
       position: fixed;
-      width: 100%;
-      height: 100%;
-      background: url('https://mcard-resources.barunsoncard.com/upload/invitation/260408/1176773/gallery/0e71015a-b03b-4186-b928-a3f089d03e85.jpg') center/cover no-repeat;
-      opacity: 1;
-      transition: opacity 1s ease;
+      inset: 0;
+
+      /* 🔥 실제 페이지용 이미지 */
+      background: url('https://mcard-resources.barunsoncard.com/upload/invitation/260408/1176773/gallery/de11b803-8d98-4d9b-866f-3537dfbfbaf6.jpg?_gl=1*15f118u*_ga*NjU4MzU0MjIzLjE3NzU2OTM5NzI.*_ga_NBB7YR65BT*czE3NzU2OTc4NzIkbzIkZzEkdDE3NzU2OTgyNzYkajYwJGwwJGg5MzcwOTM5MDk.') center center / cover no-repeat;
+
+      opacity: 0;
+      transform: scale(1.02);
+      transition:
+        opacity 0.9s ease-in-out,
+        transform 1.8s ease-out;
     }
 
-    .fade-out {
+    #cover.fade-in {
+      opacity: 1;
+      transform: scale(1);
+    }
+
+    #cover.fade-out {
       opacity: 0;
+      transform: scale(1.01);
     }
   </style>
 </head>
 
 <body>
+  <div id="cover"></div>
 
-<div id="cover"></div>
+  <script>
+    const cover = document.getElementById('cover');
+    const targetUrl = "https://mcard.barunsoncard.com/m/vtkepy554917";
 
-<script>
-  const cover = document.getElementById('cover');
+    window.addEventListener("load", () => {
 
-  setTimeout(() => {
-    cover.classList.add('fade-in');
-  }, 200);
+      // 페이드 인
+      setTimeout(() => {
+        cover.classList.add("fade-in");
+      }, 100);
 
-  setTimeout(() => {
-    cover.classList.remove('fade-in');
-    cover.classList.add('fade-out');
-  }, 1600);
+      // 유지 후 페이드 아웃
+      setTimeout(() => {
+        cover.classList.remove("fade-in");
+        cover.classList.add("fade-out");
+      }, 1700);
 
-  setTimeout(() => {
-    window.location.href = "https://mcard.barunsoncard.com/m/vtkepy554917";
-  }, 2300);
-</script>
-
+      // 이동
+      setTimeout(() => {
+        window.location.href = targetUrl;
+      }, 2600);
+    });
+  </script>
 </body>
 </html>
